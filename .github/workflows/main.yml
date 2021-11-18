@@ -16,7 +16,7 @@ jobs:
     # Define `working-directory` if you application is in a subfolder
     defaults:
       run:
-        working-directory: project
+        working-directory: Project
      # Service containers to run with `runner-job`
     services:
       # Label used to access the service container
@@ -52,4 +52,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "DevOps-Project" # Must be unique in Heroku
           heroku_email: "maxime.attal@edu.ece.fr" # Heroku account email
-          appdir: project # Define appdir if you application is in a subfolder
+          appdir: Project # Define appdir if you application is in a subfolder
