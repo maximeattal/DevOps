@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "test": "./node_modules/.bin/mocha test/*.js"
   },
-  "author": "Sergei Kudinov",
+  "author": "Maxime Attal & Kevin Zheng",
   "license": "",
   "dependencies": {
     "express": "^4.17.1",
