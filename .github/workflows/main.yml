@@ -12,7 +12,7 @@ on:
 jobs:
   # CI part
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     # Define `working-directory` if you application is in a subfolder
     defaults:
       run:
@@ -43,13 +43,13 @@ jobs:
   # CD part
   deploy:
     needs: test # Requires CI part to be succesfully completed
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       # Read instructions how to configure this action: https://github.com/marketplace/actions/deploy-to-heroku#getting-started
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "DevOps-Project" # Must be unique in Heroku
+          heroku_app_name: "devops-project-attal-zheng" # Must be unique in Heroku
           heroku_email: "maxime.attal@edu.ece.fr" # Heroku account email
           appdir: Project # Define appdir if you application is in a subfolder
