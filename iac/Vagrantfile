@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
     project_server.vm.network :private_network, ip: "20.20.20.2"
     # Specify the VM specs when using the Virtualbox provisioner
     project_server.vm.provider "virtualbox" do |vb|
+      vb.gui = true
       vb.name =  "project.server.local"
       # VM RAM in MB
       vb.memory = 2048
@@ -38,5 +39,5 @@ Vagrant.configure("2") do |config|
     ansible.tags = "install"
   end
 
-  config.vm.synced_folder ".", "/vagrant/project",type:"virtualbox"
+  config.vm.synced_folder "../userapi/src", "/vagrant"
 end
