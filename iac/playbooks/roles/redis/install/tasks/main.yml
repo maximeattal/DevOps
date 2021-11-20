@@ -40,8 +40,34 @@
     state: started
     enabled: yes
 
-- name: Install node and npm
+- name: Install Node.js and npm
   yum:
     name: npm
     state: present
-    
+    #enabled: yes
+
+- name: Install Rorever (to run our Node.js app)
+  npm:
+    name: forever
+    global: yes
+    state: present
+
+# - name: Install Redis
+#   hosts: all
+#   vars:
+#     redis_port: 3000
+#     redis_databases: 1
+#   tasks:
+#     - name: Ensure Redis is present
+#       apt: pkg=redis-server state=latest
+#       sudo: true
+
+#     - name: Ensure Redis is started
+#       service: name=redis-server state=started enabled=yes
+#       sudo: true
+  
+#   handlers:
+
+#     - name: Redis Restart
+#       service: name=redis-server state=restarted enabled=yes
+#       sudo: true
