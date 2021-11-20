@@ -4,3 +4,4 @@ Project/dump.rdb
 node_modules
 iac/.vagrant
 iac/nul
+*.rdb

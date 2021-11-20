@@ -1,0 +1,12 @@
+{
+  "name": "devop-project",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "userapi/src/index.js",
+  "scripts": {
+    "start": "node userapi/src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
