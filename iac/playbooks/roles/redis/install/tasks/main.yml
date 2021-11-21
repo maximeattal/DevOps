@@ -7,6 +7,11 @@
       - openssh-server
     state: latest
 
+- name: Install redis
+  yum:
+    name: redis
+    state: latest
+
 - name: Enable and start sshd
   service:
     name: sshd
@@ -51,23 +56,3 @@
     name: forever
     global: yes
     state: present
-
-# - name: Install Redis
-#   hosts: all
-#   vars:
-#     redis_port: 3000
-#     redis_databases: 1
-#   tasks:
-#     - name: Ensure Redis is present
-#       apt: pkg=redis-server state=latest
-#       sudo: true
-
-#     - name: Ensure Redis is started
-#       service: name=redis-server state=started enabled=yes
-#       sudo: true
-  
-#   handlers:
-
-#     - name: Redis Restart
-#       service: name=redis-server state=restarted enabled=yes
-#       sudo: true
