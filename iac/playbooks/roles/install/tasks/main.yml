@@ -45,16 +45,16 @@
     state: started
     enabled: yes
 
-- name: Download Node.js 
+- name: Download node 17
   get_url:
     url: https://rpm.nodesource.com/setup_17.x
     dest: /opt
     mode: 755
 
-- name: Setup Node.js v17
+- name: Setup node 17
   command: /opt/setup_17.x
 
-- name: Install Node.js
+- name: Install node
   yum:
     name: nodejs
 
@@ -62,12 +62,12 @@
   become: yes
   command: npm install pm2 -g
   args:
-    chdir: ~/project/userapi
+    chdir: /home/vagrant/project
 
 - name: Install Node modules of the project
   become: no
   command: npm install
   args:
-    chdir: ~/project/userapi
+    chdir: /home/vagrant/project
 
 

@@ -1,22 +1,25 @@
 
-- name: Launch Redis server
+- name: Launch redis-server
   command: redis-server --daemonize yes
 
 - name: Launch project tests
   become: no
   command: npm test
   args:
-    chdir: ~/project/userapi
+    chdir: ~/project
   register: tests_value
 
+- name: Print tests output
+  debug:
+    msg: "{{ tests_value.stdout.split('\n') }}"
 
-- name: Launch Node application on port 3000
+- name: Launch project on port 3000
   become: no
   command: pm2 start npm -- start
   args:
-    chdir: ~/project/userapi
+    chdir: ~/project
 
-- name: Check Project health
+- name: Check project health
   uri:
     url: http://127.0.0.1:3000
     return_content: yes
@@ -26,3 +29,8 @@
 - name: Print Project health
   debug:
     msg: "{{ project_health.content }}"
+
+- name: Print access information
+  debug:
+    msg: "You can access the API from the host on 20.20.20.2:3000"
+  when: project_health.status == 200

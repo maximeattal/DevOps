@@ -18,7 +18,6 @@ Vagrant.configure("2") do |config|
     project_server.vm.network :private_network, ip: "20.20.20.2"
     # Specify the VM specs when using the Virtualbox provisioner
     project_server.vm.provider "virtualbox" do |vb|
-      
       vb.name =  "project.server.local"
       # VM RAM in MB
       vb.memory = 2048
@@ -38,9 +37,8 @@ Vagrant.configure("2") do |config|
     # Only run the roles with these tags
     # ansible.tags = "install"
   end
-
   config.vm.synced_folder "../", "/home/vagrant/project", 
-    create: true,
     type: "rsync",
     rsync__exclude: ["node_modules/", ".git/", "iac/",".md" ]
+
 end
