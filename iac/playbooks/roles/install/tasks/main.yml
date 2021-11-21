@@ -45,14 +45,29 @@
     state: started
     enabled: yes
 
-- name: Install Node.js and npm
-  yum:
-    name: npm
-    state: present
-    #enabled: yes
+- name: Download Node.js 
+  get_url:
+    url: https://rpm.nodesource.com/setup_17.x
+    dest: /opt
+    mode: 755
 
-- name: Install Rorever (to run our Node.js app)
-  npm:
-    name: forever
-    global: yes
-    state: present
+- name: Setup Node.js v17
+  command: /opt/setup_17.x
+
+- name: Install Node.js
+  yum:
+    name: nodejs
+
+- name: Install Node daemon to run it in background
+  become: yes
+  command: npm install pm2 -g
+  args:
+    chdir: ~/project/userapi
+
+- name: Install Node modules of the project
+  become: no
+  command: npm install
+  args:
+    chdir: ~/project/userapi
+
+

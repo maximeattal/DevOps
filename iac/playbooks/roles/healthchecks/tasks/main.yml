@@ -1,0 +1,28 @@
+
+- name: Launch Redis server
+  command: redis-server --daemonize yes
+
+- name: Launch project tests
+  become: no
+  command: npm test
+  args:
+    chdir: ~/project/userapi
+  register: tests_value
+
+
+- name: Launch Node application on port 3000
+  become: no
+  command: pm2 start npm -- start
+  args:
+    chdir: ~/project/userapi
+
+- name: Check Project health
+  uri:
+    url: http://127.0.0.1:3000
+    return_content: yes
+  # Register the output of the module in a variable
+  register: project_health
+
+- name: Print Project health
+  debug:
+    msg: "{{ project_health.content }}"
