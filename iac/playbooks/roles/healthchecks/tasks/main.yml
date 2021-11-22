@@ -1,4 +1,4 @@
-
+---
 - name: Launch redis-server
   command: redis-server --daemonize yes
 
@@ -30,7 +30,7 @@
   debug:
     msg: "{{ project_health.content }}"
 
-- name: Print access information
+- name: Print access information to host
   debug:
     msg: "You can access the API from the host on 20.20.20.2:3000"
   when: project_health.status == 200

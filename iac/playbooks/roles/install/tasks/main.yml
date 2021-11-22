@@ -29,11 +29,6 @@
     - http
     - https
 
-- name: Reload firewalld
-  service:
-    name: firewalld
-    state: reloaded
-
 - name: Install postfix
   yum:
     name: postfix
@@ -58,13 +53,13 @@
   yum:
     name: nodejs
 
-- name: Install Node daemon to run it in background
+- name: Install Node daemon
   become: yes
   command: npm install pm2 -g
   args:
     chdir: /home/vagrant/project
 
-- name: Install Node modules of the project
+- name: Install Node modules
   become: no
   command: npm install
   args:

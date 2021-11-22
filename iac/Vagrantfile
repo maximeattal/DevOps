@@ -39,6 +39,6 @@ Vagrant.configure("2") do |config|
   end
   config.vm.synced_folder "../", "/home/vagrant/project", 
     type: "rsync",
-    rsync__exclude: ["node_modules/", ".git/", "iac/",".md" ]
+    rsync__exclude: ["node_modules", "iac/",".md" ]
 
 end
