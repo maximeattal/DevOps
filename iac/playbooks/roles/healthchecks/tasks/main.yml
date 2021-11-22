@@ -6,7 +6,7 @@
   become: no
   command: npm test
   args:
-    chdir: ~/project
+    chdir: ~/project/userapi
   register: tests_value
 
 - name: Print tests output
@@ -17,7 +17,7 @@
   become: no
   command: pm2 start npm -- start
   args:
-    chdir: ~/project
+    chdir: ~/project/userapi
 
 - name: Check project health
   uri:
@@ -32,5 +32,5 @@
 
 - name: Print access information to host
   debug:
-    msg: "You can access the API from the host on 20.20.20.2:3000"
+    msg: "You can access from the host on 20.20.20.2:3000"
   when: project_health.status == 200

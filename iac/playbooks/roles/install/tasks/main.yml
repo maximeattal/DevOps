@@ -57,12 +57,12 @@
   become: yes
   command: npm install pm2 -g
   args:
-    chdir: /home/vagrant/project
+    chdir: /home/vagrant/project/userapi
 
 - name: Install Node modules
   become: no
   command: npm install
   args:
-    chdir: /home/vagrant/project
+    chdir: /home/vagrant/project/userapi
 
 
