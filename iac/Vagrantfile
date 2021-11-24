@@ -4,11 +4,11 @@
 Vagrant.configure("2") do |config|
 
   # # # Do not pay attention to this parameter
-  # if Vagrant.has_plugin?("vagrant-vbguest")
-  #   config.vm.provider :virtualbox do |vb|
-  #     config.vbguest.auto_update = false
-  #   end
-  # end
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vm.provider :virtualbox do |vb|
+      config.vbguest.auto_update = false
+    end
+  end
 
   # Define the devopsProjectVM
   config.vm.define "project_server" do |project_server|
@@ -18,7 +18,6 @@ Vagrant.configure("2") do |config|
     project_server.vm.network :private_network, ip: "20.20.20.2"
     # Specify the VM specs when using the Virtualbox provisioner
     project_server.vm.provider "virtualbox" do |vb|
-      vb.gui = true
       vb.name =  "project.server.local"
       # VM RAM in MB
       vb.memory = 2048
@@ -36,10 +35,8 @@ Vagrant.configure("2") do |config|
     # The path to the playbooks entry point
     ansible.playbook = "playbooks/run.yml"
     # Only run the roles with these tags
-    # ansible.tags = "install"
+    ansible.tags = "install"
   end
-  config.vm.synced_folder "../", "/home/vagrant/project",
-    type: "rsync",
-    rsync__exclude: ["node_modules/", ".git/", "iac/",".md" ]
 
+  config.vm.synced_folder ".", "/vagrant/project",type:"virtualbox"
 end
