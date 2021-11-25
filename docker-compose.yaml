@@ -1,0 +1,23 @@
+version: '3'
+services:
+  redis:
+    image: "redis"
+    expose:
+      - 6379
+    volumes:
+      - redis-data:/data
+  web:
+    depends_on:
+      - redis
+    image: kevinzgdev/devops-project
+    command:  ["sh", "-c", "npm test && npm start"]
+    ports:
+      - "3000:3000"    
+    environment:
+      REDIS_HOST: redis
+    links: 
+      - redis
+
+     
+volumes:
+  redis-data: {}

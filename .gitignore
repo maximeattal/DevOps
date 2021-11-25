@@ -1,8 +1,5 @@
 .DS_Store
 userapi/node_modules
-Project/dump.rdb
-node_modules
 iac/.vagrant
 iac/nul
-iac/.vagrant
 dump.rdb
