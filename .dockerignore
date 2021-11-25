@@ -1,0 +1,14 @@
+# Git files
+.git
+.gitignore
+
+# Md files
+*.md
+
+# Node modules
+node_modules
+
+# Vagrant
+iac
+
+# Kubernetes

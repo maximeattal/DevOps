@@ -7,14 +7,10 @@
     "start": "node src/index.js",
     "test": "./node_modules/.bin/mocha test/*.js"
   },
-  "author": "Maxime Attal & Kevin Zheng",
-  "license": "",
   "dependencies": {
     "express": "^4.17.1",
     "mixme": "^0.5.4",
-    "redis": "^3.1.2"
-  },
-  "devDependencies": {
+    "redis": "^3.1.2",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "eslint": "^8.2.0",
