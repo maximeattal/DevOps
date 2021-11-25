@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-project-empty-dir
+  labels:
+    app: devops-project-empty-dir
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-project-empty-dir
+  template:
+    metadata:
+      labels:
+        app: devops-project-empty-dir
+    spec:
+      volumes:
+        - name: my-emptydir
+          emptyDir: {}
+      containers:
+        - name: devops-project-container
+          image: kevinzgdev/devops-project
+          ports:
+            - containerPort: 3000
+              name: "http-server"
+          volumeMounts:
+            - name: my-emptydir
+              mountPath: /devops-project-master
