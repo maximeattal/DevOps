@@ -14,5 +14,13 @@ spec:
     route:
     - destination:
         host: devops-project
+        subset: v1
         port:
           number: 3000
+      weight: 70
+    - destination:
+        host: devops-project
+        subset: v2
+        port:
+          number: 3000
+      weight: 30
