@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: devops-project-service
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - devops-project-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    route:
+    - destination:
+        host: devops-project
+        port:
+          number: 3000
