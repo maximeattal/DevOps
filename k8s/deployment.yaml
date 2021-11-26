@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-project-deployment
+  labels:
+    app: devops-project-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-project-pod
+  template:
+    metadata:
+      labels:
+        app: devops-project-pod
+    spec:
+      volumes:
+        - name: redis-pers-volume
+          persistentVolumeClaim:
+            claimName: redis-pers-volume-claim
+      containers:
+        - name: devops-project-container
+          image: kevinzgdev/devops-project
+          ports:
+            - containerPort: 3000
+        - name: redis-container
+          image: redis
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - name: redis-pers-volume
+              mountPath: /data
