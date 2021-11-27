@@ -17,22 +17,22 @@ spec:
         version: v1
     spec:
       volumes:
-        - name: redis-pers-volume
-          persistentVolumeClaim:
-            claimName: redis-pers-volume-claim
+      - name: redis-pers-volume
+        persistentVolumeClaim:
+          claimName: redis-pers-volume-claim
       containers:
-        - name: devops-project-container
-          image: docker.io/maximeattal14/devops-project:v1
-          ports:
-            - containerPort: 3000
-          imagePullPolicy: Always
-        - name: redis-container
-          image: redis
-          ports:
-            - containerPort: 6379
-          volumeMounts:
-            - name: redis-pers-volume
-              mountPath: /data
+      - name: devops-project-container
+        image: docker.io/maximeattal14/devops-project:v1
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+      - name: redis-container
+        image: redis
+        ports:
+        - containerPort: 6379
+        volumeMounts:
+        - name: redis-pers-volume
+          mountPath: /data
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -53,19 +53,19 @@ spec:
         version: v2
     spec:
       volumes:
-        - name: redis-pers-volume
-          persistentVolumeClaim:
-            claimName: redis-pers-volume-claim
+      - name: redis-pers-volume
+        persistentVolumeClaim:
+          claimName: redis-pers-volume-claim
       containers:
-        - name: devops-project-container
-          image: docker.io/maximeattal14/devops-project:v2
-          ports:
-            - containerPort: 3000
-          imagePullPolicy: Always
-        - name: redis-container
-          image: redis
-          ports:
-            - containerPort: 6379
-          volumeMounts:
-            - name: redis-pers-volume
-              mountPath: /data
+      - name: devops-project-container2
+        image: docker.io/maximeattal14/devops-project:v2
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+      - name: redis-container
+        image: redis
+        ports:
+        - containerPort: 6379
+        volumeMounts:
+        - name: redis-pers-volume
+          mountPath: /data

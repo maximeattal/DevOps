@@ -5,6 +5,7 @@ metadata:
   labels:
     app: devops-project
 spec:
+  type: NodePort
   ports:
   - port: 3000
     name: http
