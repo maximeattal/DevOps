@@ -1,32 +1,71 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-project-deployment
+  name: devops-project-v1
   labels:
-    app: devops-project-deployment
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: devops-project-pod
+      app: devops-project
+      version: v1
   template:
     metadata:
       labels:
-        app: devops-project-pod
+        app: devops-project
+        version: v1
     spec:
       volumes:
-        - name: redis-pers-volume
-          persistentVolumeClaim:
-            claimName: redis-pers-volume-claim
+      - name: redis-pers-volume
+        persistentVolumeClaim:
+          claimName: redis-pers-volume-claim
       containers:
-        - name: devops-project-container
-          image: kevinzgdev/devops-project
-          ports:
-            - containerPort: 3000
-        - name: redis-container
-          image: redis
-          ports:
-            - containerPort: 6379
-          volumeMounts:
-            - name: redis-pers-volume
-              mountPath: /data
+      - name: devops-project-container
+        image: docker.io/maximeattal14/devops-project:v1
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+      - name: redis-container
+        image: redis
+        ports:
+        - containerPort: 6379
+        volumeMounts:
+        - name: redis-pers-volume
+          mountPath: /data
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-project-v2
+  labels:
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-project
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: devops-project
+        version: v2
+    spec:
+      volumes:
+      - name: redis-pers-volume
+        persistentVolumeClaim:
+          claimName: redis-pers-volume-claim
+      containers:
+      - name: devops-project-container2
+        image: docker.io/maximeattal14/devops-project:v2
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+      - name: redis-container
+        image: redis
+        ports:
+        - containerPort: 6379
+        volumeMounts:
+        - name: redis-pers-volume
+          mountPath: /data
