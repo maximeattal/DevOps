@@ -1,7 +1,44 @@
 
 # DevOps - project
 
-*presentation, introduction, ...*
+This project was carried out for academic purposes. It was suggested by the DevOps course, which we followed during our ING4 studies over the period September 2021 to December 2021. The project takes over the web application given by Mr.Kudinov in his Lab4 and aims to implement all the tools to carry out a DevOps cycle.
+
+### Table of contents
+
+- ###### [Getting started](#0. Getting started)
+
+- ###### [Web application](#1. Web application ✅)
+
+- ###### [CI/CD pipeline](#2. CI/CD pipeline ✅)
+
+- ###### [Iac approach](#3. Run application using IaC approach ✅)
+
+- ###### [Docker image](#4. Docker image ✅)
+
+- ###### [Docker compose](#5. Docker compose ✅)
+
+- ###### [Kubernetes](#6. Docker orchestration using Kubernetes ✅)
+
+- ###### [Istio](#7. Docker orchestration using Istio ✅)
+
+- ###### [Monitoring](#8. Monitoring ✅)
+
+
+
+## 0. Getting started
+
+- Clone this repository, from your local machine:
+
+```
+git clone https://github.com/maximeattal/DevOps.git
+```
+
+- Install node modules:
+
+```
+cd userapi
+npm install
+```
 
 ## 1. Web application ✅
 
@@ -17,21 +54,14 @@ We used the draft application [userapi](http://courses/devops/modules/04.continu
 
 *how to start and use the application, run the tests, ...*
 
-* Clone this repository, from your local machine:
-
-  ```
-  git clone https://github.com/maximeattal/DevOps.git
-  cd userapi
-  npm install
-  ```
-
 * Start the Redis server:
   ```yaml
   redis-server
   ```
-  
+
 * Run the web application inside userapi, in another terminal window:   
   ```yaml
+  cd userapi
   npm test
   npm start
   ```
@@ -42,7 +72,13 @@ We used the draft application [userapi](http://courses/devops/modules/04.continu
 
 *What you are supposed to see...*
 
+- When you are executing test:
 
+![Capture d’écran 2021-12-15 à 14.34.22](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 14.34.22.png)
+
+- When going to your `http://localhost:3000` :
+
+![Capture d’écran 2021-12-15 à 14.35.32](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 14.35.32.png)
 
 ## 2. CI/CD pipeline ✅
 
@@ -50,7 +86,11 @@ Text
 
 ### Screenshots
 
+*What you are supposed to see...*
 
+In the GitHub Action section: 
+
+![Capture d’écran 2021-12-15 à 15.29.15](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.29.15.png)
 
 
 
@@ -67,15 +107,28 @@ Text
 
 *how to start and use the application, run the tests, ...*
 
-* Start vagrant:
+* Start vagrant from the root directory:
 
   ```yaml
+  cd iac
   vagrant up
   ```
+
+> **Note!** If you are using a macOS computer, `vagrant up` may bring an error. To fix it you have to go the `iac` folder and edit `Vagranfile`. After line 20, add the following line `vb.gui = true` and save the file. 
+
+- Go to `20.20.20.2` on your web browser.
 
 ### Screenshots
 
 *What you are supposed to see...*
+
+- In the console:
+
+![Capture d’écran 2021-12-15 à 15.05.26](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.05.26.png)
+
+- At `20.20.20.2`:
+
+![Capture d’écran 2021-12-15 à 15.05.59](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.05.59.png)
 
 ## 4. Docker image ✅
 
@@ -103,6 +156,8 @@ Text
 
 *What you are supposed to see...*
 
+![Capture d’écran 2021-12-15 à 15.10.48](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.10.48.png)
+
 ## 5. Docker compose ✅
 
 Text
@@ -120,6 +175,14 @@ Text
 ### Screenshots
 
 *What you are supposed to see...*
+
+- In the console:
+
+![Capture d’écran 2021-12-15 à 15.11.50](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.11.50.png)
+
+- When going to your `http://localhost:3000` :
+
+![Capture d’écran 2021-12-15 à 15.12.29](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.12.29.png)
 
 ## 6. Docker orchestration using Kubernetes ✅
 
@@ -151,6 +214,8 @@ Text
 ### Screenshots
 
 *What you are supposed to see...*
+
+![Capture d’écran 2021-12-15 à 15.20.53](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.20.53.png)
 
 ## 7. Docker orchestration using Istio ✅
 
@@ -191,32 +256,96 @@ Text
   kubectl get svc -n istio-system
   ```
 
-  Under the ligne `istio-ingressgateway` and the column `port(s)` take the port after `80:` and before `/TCP`. 
+  At the ligne `istio-ingressgateway` and the column `port(s)` take the port after `80:` and before `/TCP`. 
 
-- Go to `ip:port`.
+- Go to `<ip>:<port>`.
 
 ### Screenshots
 
 *What you are supposed to see...*
 
-## 8. Monitoring ❌
+- 70% of the time:
+
+![Capture d’écran 2021-12-15 à 15.26.44](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.26.44.png)
+
+- 30% of the time (if you refresh the pag multiple times quickly):
+
+![Capture d’écran 2021-12-15 à 15.27.36](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.27.36.png)
+
+## 8. Monitoring ✅
 
 Text
 
 ### Usage
 
-- 
+- Before starting do the [docker orchestration using Istio](#7. Docker orchestration using Istio ✅) part.
+
+- Apply Prometheus configuration files:
+
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/prometheus.yaml
+  ```
+
+- Apply Grafana configuration files:
+
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/grafana.yaml
+  ```
+
+- Verify that the Prometheus service is running in your cluster:
+
+  ```
+  $ kubectl -n istio-system get svc prometheus
+  NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+  prometheus   ClusterIP   10.109.193.158   <none>        9090/TCP   4h5m
+  ```
+
+- Verify that the Grafana service is running in your cluster:
+
+  ```
+  $ kubectl -n istio-system get svc grafana
+  NAME      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+  grafana   ClusterIP   10.97.232.47     <none>        3000/TCP   68m
+  ```
+
+- Forward the Prometheus server port to your local machine:  
+
+  ```
+  kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') 9090:9090 &
+  ```
+
+- Forward the Grafana server port to your local machine:  
+
+  ```
+  kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000 &
+  ```
+
+- Open the Istio dashboard using Grafana, by going to `http://localhost:3000/d/G8wLrJIZk/istio-mesh-dashboard`.
+- Refresh the web application page few times to generate a small amount of traffic.
 
 ### Screenshots
 
 *What you are supposed to see...*
 
+![Capture d’écran 2021-12-15 à 17.06.57](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.06.57.png)
+
+![Capture d’écran 2021-12-15 à 17.08.50](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.08.50.png)
+
+![Capture d’écran 2021-12-15 à 17.08.56](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.08.56.png)
+
+## Authors
+
+Maxime ATTAL
+
+[maxime.attal@edu.ece.fr](mailto:maxime.attal@edu.ece.fr)
+
+ING4 student at ECE Paris (SI Group inter 3)
 
 
-## Author
 
-*name, email, ...*
+Kevin ZHENG
 
-## Bonus
+[kevin.zheng@edu.ece.fr](mailto:kevin.zheng@edu.ece.fr)
 
-*place your graduation and comments*
+ING4 student at ECE Paris (SI Group inter 3)
+
