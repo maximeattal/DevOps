@@ -5,27 +5,27 @@ This project was carried out for academic purposes. It was suggested by the DevO
 
 ### Table of contents
 
-- ###### [Getting started](#0. Getting started)
+- ###### [Getting started](#getting-started)
 
-- ###### [Web application](#1. Web application ✅)
+- ###### [Web application](#web-app)
 
-- ###### [CI/CD pipeline](#2. CI/CD pipeline ✅)
+- ###### [CI/CD pipeline](#ci-cd)
 
-- ###### [Iac approach](#3. Run application using IaC approach ✅)
+- ###### [Iac approach](#iac)
 
-- ###### [Docker image](#4. Docker image ✅)
+- ###### [Docker image](#docker-image)
 
-- ###### [Docker compose](#5. Docker compose ✅)
+- ###### [Docker compose](#docker-compose)
 
-- ###### [Kubernetes](#6. Docker orchestration using Kubernetes ✅)
+- ###### [Kubernetes](#kubernetes)
 
-- ###### [Istio](#7. Docker orchestration using Istio ✅)
+- ###### [Istio](#istio)
 
-- ###### [Monitoring](#8. Monitoring ✅)
+- ###### [Monitoring](#monitoring)
 
 
 
-## 0. Getting started
+## <a id="getting-started"></a> 0. Getting started
 
 - Clone this repository, from your local machine:
 
@@ -40,9 +40,9 @@ cd userapi
 npm install
 ```
 
-## 1. Web application ✅
+## <a id="web-app"></a> 1. Web application ✅
 
-We used the draft application [userapi](http://courses/devops/modules/04.continuous-testing/assets/userapi) from the DevOps course. 
+We used the draft application [userapi](https://github.com/adaltas/ece-devops-2021-fall/tree/master/courses/devops/modules/04.continuous-testing/assets/userapi) from the DevOps course. 
 
 **Are proposed:**
 
@@ -74,13 +74,13 @@ We used the draft application [userapi](http://courses/devops/modules/04.continu
 
 - When you are executing test:
 
-![Capture d’écran 2021-12-15 à 14.34.22](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 14.34.22.png)
+![Capture d’écran 2021-12-15 à 14.34.22](image/Capture d’écran 2021-12-15 à 14.34.22.png)
 
 - When going to your `http://localhost:3000` :
 
-![Capture d’écran 2021-12-15 à 14.35.32](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 14.35.32.png)
+![Capture d’écran 2021-12-15 à 14.35.32](image/Capture d’écran 2021-12-15 à 14.35.32.png)
 
-## 2. CI/CD pipeline ✅
+## <a id="ci-cd"></a> 2. CI/CD pipeline ✅
 
 Text
 
@@ -90,11 +90,11 @@ Text
 
 In the GitHub Action section: 
 
-![Capture d’écran 2021-12-15 à 15.29.15](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.29.15.png)
+![Capture d’écran 2021-12-15 à 15.29.15](image/Capture d’écran 2021-12-15 à 15.29.15.png)
 
 
 
-## 3. Run application using IaC approach ✅
+## <a id="iac"></a> 3. Run application using IaC approach ✅
 
 1. Configure with Vagrant: 1 VM running on a Linux distribution
 2. Provision the VM with Ansible, which includes installing and running:
@@ -124,13 +124,13 @@ In the GitHub Action section:
 
 - In the console:
 
-![Capture d’écran 2021-12-15 à 15.05.26](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.05.26.png)
+![Capture d’écran 2021-12-15 à 15.05.26](image/Capture d’écran 2021-12-15 à 15.05.26.png)
 
 - At `20.20.20.2`:
 
-![Capture d’écran 2021-12-15 à 15.05.59](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.05.59.png)
+![Capture d’écran 2021-12-15 à 15.05.59](image/Capture d’écran 2021-12-15 à 15.05.59.png)
 
-## 4. Docker image ✅
+## <a id="docker-image"></a> 4. Docker image ✅
 
 Text
 
@@ -156,9 +156,9 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 15.10.48](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.10.48.png)
+![Capture d’écran 2021-12-15 à 15.10.48](image/Capture d’écran 2021-12-15 à 15.10.48.png)
 
-## 5. Docker compose ✅
+## <a id="docker-compose"></a> 5. Docker compose ✅
 
 Text
 
@@ -178,13 +178,13 @@ Text
 
 - In the console:
 
-![Capture d’écran 2021-12-15 à 15.11.50](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.11.50.png)
+![Capture d’écran 2021-12-15 à 15.11.50](image/Capture d’écran 2021-12-15 à 15.11.50.png)
 
 - When going to your `http://localhost:3000` :
 
-![Capture d’écran 2021-12-15 à 15.12.29](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.12.29.png)
+![Capture d’écran 2021-12-15 à 15.12.29](image/Capture d’écran 2021-12-15 à 15.12.29.png)
 
-## 6. Docker orchestration using Kubernetes ✅
+## <a id="kubernetes"></a> 6. Docker orchestration using Kubernetes ✅
 
 Text
 
@@ -215,9 +215,9 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 15.20.53](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.20.53.png)
+![Capture d’écran 2021-12-15 à 15.20.53](image/Capture d’écran 2021-12-15 à 15.20.53.png)
 
-## 7. Docker orchestration using Istio ✅
+## <a id="istio"></a> 7. Docker orchestration using Istio ✅
 
 Text
 
@@ -266,13 +266,13 @@ Text
 
 - 70% of the time:
 
-![Capture d’écran 2021-12-15 à 15.26.44](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.26.44.png)
+![Capture d’écran 2021-12-15 à 15.26.44](image/Capture d’écran 2021-12-15 à 15.26.44.png)
 
 - 30% of the time (if you refresh the pag multiple times quickly):
 
-![Capture d’écran 2021-12-15 à 15.27.36](/Users/maximeattal/Library/Application Support/typora-user-images/Capture d’écran 2021-12-15 à 15.27.36.png)
+![Capture d’écran 2021-12-15 à 15.27.36](image/Capture d’écran 2021-12-15 à 15.27.36.png)
 
-## 8. Monitoring ✅
+## <a id="monitoring"></a> 8. Monitoring ✅
 
 Text
 
@@ -327,11 +327,11 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 17.06.57](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.06.57.png)
+![Capture d’écran 2021-12-15 à 17.06.57](image/Capture d’écran 2021-12-15 à 17.06.57.png)
 
-![Capture d’écran 2021-12-15 à 17.08.50](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.08.50.png)
+![Capture d’écran 2021-12-15 à 17.08.50](/Users/maximeattal/Documents/Maxime/Ecole/Superieur/ING4/DevOps/image/Capture d’écran 2021-12-15 à 17.08.50.png)
 
-![Capture d’écran 2021-12-15 à 17.08.56](/Users/maximeattal/Desktop/Capture d’écran 2021-12-15 à 17.08.56.png)
+![Capture d’écran 2021-12-15 à 17.08.56](/Users/maximeattal/Documents/Maxime/Ecole/Superieur/ING4/DevOps/image/Capture d’écran 2021-12-15 à 17.08.56.png)
 
 ## Authors
 
