@@ -74,11 +74,11 @@ We used the draft application [userapi](https://github.com/adaltas/ece-devops-20
 
 - When you are executing test:
 
-![Capture d’écran 2021-12-15 à 14.34.22](image/Capture d’écran 2021-12-15 à 14.34.22.png)
+![Capture d’écran 2021-12-15 à 14.34.22](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2014.34.22.png?raw=true)
 
 - When going to your `http://localhost:3000` :
 
-![Capture d’écran 2021-12-15 à 14.35.32](image/Capture d’écran 2021-12-15 à 14.35.32.png)
+![Capture d’écran 2021-12-15 à 14.35.32](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2014.35.32.png?raw=true)
 
 ## <a id="ci-cd"></a> 2. CI/CD pipeline ✅
 
@@ -90,7 +90,7 @@ Text
 
 In the GitHub Action section: 
 
-![Capture d’écran 2021-12-15 à 15.29.15](image/Capture d’écran 2021-12-15 à 15.29.15.png)
+![Capture d’écran 2021-12-15 à 15.29.15](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.29.15.png?raw=true)
 
 
 
@@ -124,11 +124,11 @@ In the GitHub Action section:
 
 - In the console:
 
-![Capture d’écran 2021-12-15 à 15.05.26](image/Capture d’écran 2021-12-15 à 15.05.26.png)
+![Capture d’écran 2021-12-15 à 15.05.26](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.05.26.png?raw=true)
 
 - At `20.20.20.2`:
 
-![Capture d’écran 2021-12-15 à 15.05.59](image/Capture d’écran 2021-12-15 à 15.05.59.png)
+![Capture d’écran 2021-12-15 à 15.05.59](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.05.59.png?raw=true)
 
 ## <a id="docker-image"></a> 4. Docker image ✅
 
@@ -156,7 +156,7 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 15.10.48](image/Capture d’écran 2021-12-15 à 15.10.48.png)
+![Capture d’écran 2021-12-15 à 15.10.48](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.10.48.png?raw=true)
 
 ## <a id="docker-compose"></a> 5. Docker compose ✅
 
@@ -178,11 +178,11 @@ Text
 
 - In the console:
 
-![Capture d’écran 2021-12-15 à 15.11.50](image/Capture d’écran 2021-12-15 à 15.11.50.png)
+![Capture d’écran 2021-12-15 à 15.11.50](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.11.50.png?raw=true)
 
 - When going to your `http://localhost:3000` :
 
-![Capture d’écran 2021-12-15 à 15.12.29](image/Capture d’écran 2021-12-15 à 15.12.29.png)
+![Capture d’écran 2021-12-15 à 15.12.29](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.12.29.png?raw=true)
 
 ## <a id="kubernetes"></a> 6. Docker orchestration using Kubernetes ✅
 
@@ -215,7 +215,7 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 15.20.53](image/Capture d’écran 2021-12-15 à 15.20.53.png)
+![Capture d’écran 2021-12-15 à 15.20.53](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.20.53.png?raw=true)
 
 ## <a id="istio"></a> 7. Docker orchestration using Istio ✅
 
@@ -266,11 +266,11 @@ Text
 
 - 70% of the time:
 
-![Capture d’écran 2021-12-15 à 15.26.44](image/Capture d’écran 2021-12-15 à 15.26.44.png)
+![Capture d’écran 2021-12-15 à 15.26.44](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.26.44.png?raw=true)
 
 - 30% of the time (if you refresh the pag multiple times quickly):
 
-![Capture d’écran 2021-12-15 à 15.27.36](image/Capture d’écran 2021-12-15 à 15.27.36.png)
+![Capture d’écran 2021-12-15 à 15.27.36](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.27.36.png?raw=true)
 
 ## <a id="monitoring"></a> 8. Monitoring ✅
 
@@ -327,11 +327,11 @@ Text
 
 *What you are supposed to see...*
 
-![Capture d’écran 2021-12-15 à 17.06.57](image/Capture d’écran 2021-12-15 à 17.06.57.png)
+![Capture d’écran 2021-12-15 à 17.06.57](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2017.06.57.png?raw=true)
 
-![Capture d’écran 2021-12-15 à 17.08.50](/Users/maximeattal/Documents/Maxime/Ecole/Superieur/ING4/DevOps/image/Capture d’écran 2021-12-15 à 17.08.50.png)
+![Capture d’écran 2021-12-15 à 17.08.50](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2017.08.50.png?raw=true)
 
-![Capture d’écran 2021-12-15 à 17.08.56](/Users/maximeattal/Documents/Maxime/Ecole/Superieur/ING4/DevOps/image/Capture d’écran 2021-12-15 à 17.08.56.png)
+![Capture d’écran 2021-12-15 à 17.08.56](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2017.08.56.png?raw=true)
 
 ## Authors
 
