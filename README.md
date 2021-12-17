@@ -131,7 +131,7 @@ For the implementation of an IaC we used Vagrant and Ansible by installing `cent
 
 ![Capture d’écran 2021-12-15 à 15.05.59](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.05.59.png?raw=true)
 
-## <are id="docker-image"></a> 4. Docker image ✅
+## <a id="docker-image"></a> 4. Docker image ✅
 
 A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments. 
 
