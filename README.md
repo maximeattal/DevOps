@@ -5,23 +5,23 @@ This project was carried out for academic purposes. It was suggested by the DevO
 
 ### Table of contents
 
-- ###### [Getting started](#getting-started)
+- #### [Getting started](#getting-started)
 
-- ###### [Web application](#web-app)
+- #### [Web application](#web-app)
 
-- ###### [CI/CD pipeline](#ci-cd)
+- #### [CI/CD pipeline](#ci-cd)
 
-- ###### [Iac approach](#iac)
+- #### [Iac approach](#iac)
 
-- ###### [Docker image](#docker-image)
+- #### [Docker image](#docker-image)
 
-- ###### [Docker compose](#docker-compose)
+- #### [Docker compose](#docker-compose)
 
-- ###### [Kubernetes](#kubernetes)
+- #### [Kubernetes](#kubernetes)
 
-- ###### [Istio](#istio)
+- #### [Istio](#istio)
 
-- ###### [Monitoring](#monitoring)
+- #### [Monitoring](#monitoring)
 
 
 
@@ -82,13 +82,17 @@ We used the draft application [userapi](https://github.com/adaltas/ece-devops-20
 
 ## <a id="ci-cd"></a> 2. CI/CD pipeline ✅
 
-Text
+CI/CD brings automation into the DevOps life cycle. With less manual work, DevOps teams work more efficiently and with greater speed. An automated workflow also reduces the chance of human error and improves handoffs, which improves overall operational efficiency. Organizations that implement CI/CD make better use of their resources and will have a competitive edge over those that don't use CI/CD.
+
+This project implement Continuous Integration with GitHub Action. We are using yaml file called `main.yaml` wich is located in `/.github/workflows`. The role of CI is to perform unit tests when merging a branch into the main one. It will also call the redis service to be able to make theses tests. 
+
+Then, the project implement Continuous Delivery with Heroku. The role of CD is to deploy the web application to a cloud plateform like Heroku. To configure it, in the workflow we created an app on the plateform and we have informed the Heroku api key in the secret settings of the repository.
 
 ### Screenshots
 
 *What you are supposed to see...*
 
-In the GitHub Action section: 
+In the GitHub Action section when merging a branch in the main: 
 
 ![Capture d’écran 2021-12-15 à 15.29.15](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.29.15.png?raw=true)
 
@@ -96,12 +100,9 @@ In the GitHub Action section:
 
 ## <a id="iac"></a> 3. Run application using IaC approach ✅
 
-1. Configure with Vagrant: 1 VM running on a Linux distribution
-2. Provision the VM with Ansible, which includes installing and running:
-   - language runtime
-   - database
-   - the application
-   - health check of the application
+Infrastructure as code (IaC) is a type of IT setup wherein developers or operations teams automatically manage and provision the technology stack for an application through software, rather than using a manual process to configure discrete hardware devices and operating systems.  
+
+For the implementation of an IaC we used Vagrant and Ansible by installing `centos/7` on virtualbox, application that allows to create virtual machines. To configure our virtual environment we used the `Vagrantfile` and to do the tests we used the `healthcheck` file (which is in the `playbooks` folder)
 
 ### Usage
 
@@ -130,9 +131,11 @@ In the GitHub Action section:
 
 ![Capture d’écran 2021-12-15 à 15.05.59](https://github.com/maximeattal/DevOps/blob/main/image/Capture%20d’écran%202021-12-15%20à%2015.05.59.png?raw=true)
 
-## <a id="docker-image"></a> 4. Docker image ✅
+## <are id="docker-image"></a> 4. Docker image ✅
 
-Text
+A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments. 
+
+In this part, we only created a `Dockerfile` that allow to build an image of the web application.
 
 ### Usage
 
@@ -160,7 +163,9 @@ Text
 
 ## <a id="docker-compose"></a> 5. Docker compose ✅
 
-Text
+Docker compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down. 
+
+Our Docker compose file is configurated to open the web application on port 3000.
 
 ### Usage
 
@@ -186,7 +191,9 @@ Text
 
 ## <a id="kubernetes"></a> 6. Docker orchestration using Kubernetes ✅
 
-Text
+Kubernetes is an extensible and portable open-source platform for managing workloads and containerized services. It promotes both declarative configuration writing (declarative configuration) and automation.
+
+To implement Kubernetes platform we created 4 files : `deployment.yaml`, `service.yaml`, `person-volume.yaml` and `person-volume-claim.yaml`. The first file will deploy 1 pod.
 
 ### Usage
 
@@ -219,7 +226,9 @@ Text
 
 ## <a id="istio"></a> 7. Docker orchestration using Istio ✅
 
-Text
+Istio extends Kubernetes to establish a programmable, application-aware network using the powerful Envoy service proxy. Working with both Kubernetes and traditional workloads, Istio brings standard, universal traffic management, telemetry, and security to complex deployments.
+
+To Configure Istio we added a second version of the web application like so we were able to create rules for user when connecting to the application. 70% of the times users will be redirected to version 1 and 30% to version 2. 
 
 ### Usage
 
@@ -274,11 +283,11 @@ Text
 
 ## <a id="monitoring"></a> 8. Monitoring ✅
 
-Text
+One of the major infrastructure enhancements of tunneling your service traffic through the Istio Envoy proxies is that you automatically collect metrics that are fine-grained and provide high-level application information. These individual metrics are gathered by the Prometheus, but you can also access the Prometheus endpoint. We used Grafana to display metrics on a dashboard.
 
 ### Usage
 
-- Before starting do the [docker orchestration using Istio](#7. Docker orchestration using Istio ✅) part.
+- Before starting do the [docker orchestration using Istio](#istio) part.
 
 - Apply Prometheus configuration files:
 
