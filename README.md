@@ -292,13 +292,13 @@ One of the major infrastructure enhancements of tunneling your service traffic t
 - Apply Prometheus configuration files:
 
   ```
-  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/prometheus.yaml
+  kubectl apply -f k8s/prometheus.yaml
   ```
 
 - Apply Grafana configuration files:
 
   ```
-  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/grafana.yaml
+  kubectl apply -f k8s/grafana.yaml
   ```
 
 - Verify that the Prometheus service is running in your cluster:
