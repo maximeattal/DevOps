@@ -108,6 +108,13 @@ For the implementation of an IaC we used Vagrant and Ansible by installing `cent
 
 *how to start and use the application, run the tests, ...*
 
+* Install vbguest:
+
+  ```
+  cd iac
+  vagrant plugin install vagrant-vbguest
+  ```
+  
 * Start vagrant from the root directory:
 
   ```yaml
